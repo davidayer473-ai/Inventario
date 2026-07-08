@@ -5,13 +5,12 @@ import {
     mostrarProducto,
     editarProducto,
     eliminarProducto,
-    mostrarEstadistica
+    mostrarEstadistica,
+    leerInventario
 } from "./functions.js";
 
 const prompt = PromptSync();
-
-let leerTexto = fs.readFileSync("inventario.json", "utf-8");
-let dato = JSON.parse(leerTexto);
+let dato = leerInventario();
 
 let opcion = "";
 do {
@@ -19,11 +18,13 @@ do {
 
     console.log("1 = Agregar Producto");
     console.log("2 = Mostrar Productos");
-    console.log("3 = Editar Prodcuto");
+    console.log("3 = Editar Producto");
     console.log("4 = Eliminar Producto");
     console.log("5 = Mostar Estadísticas");
     console.log("6 = Salir");
     opcion = prompt("Elegir opcion: ");
+
+    console.clear();
 
     switch (opcion) {
         case "1":
