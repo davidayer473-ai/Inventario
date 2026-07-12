@@ -42,8 +42,8 @@ export function editarProducto(dato) {
             } else if (opcion == "2") {
                 resta = parseInt(prompt("Cuanto desea restar al precio: "));
                 console.log("-----------------------------");
-                while (isNaN(resta) || resta <= 0) {
-                    console.log("Error: cantidad invalida");
+                while (isNaN(resta) || resta < 0 || dato.productos[i].precio < resta) {
+                    console.log(isNaN(resta) || resta <= 0 ? "Error: cantidad invalida" : "Error: El precio no debe ser menor de 0");
                     resta = parseInt(prompt("Cuanto desea restar al precio: "));
                     console.log("-----------------------------");
                 }
@@ -59,7 +59,7 @@ export function editarProducto(dato) {
             if (opcion == "1") {
                 suma = parseFloat(prompt("Cuanto desea sumar al stock: "));
                 console.log("-----------------------------");
-                while (isNaN(suma) || suma <= 0) {
+                while (isNaN(suma) || suma < 0) {
                     console.log("Error: cantidad invalida");
                     suma = parseFloat(prompt("Cuanto desea sumar al stock: "));
                     console.log("-----------------------------");
@@ -69,15 +69,15 @@ export function editarProducto(dato) {
             } else if (opcion == "2") {
                 resta = parseInt(prompt("Cuanto desea restar al stock: "));
                 console.log("-----------------------------");
-                while (isNaN(resta) || resta <= 0) {
-                    console.log("Error: cantidad invalida");
+                while (isNaN(resta) || resta < 0 || dato.productos[i].stock < resta) {
+                    console.log(isNaN(resta) || resta <= 0 ? "Error: cantidad invalida" : "Error: El stock no debe ser menor de 0");
                     resta = parseInt(prompt("Cuanto desea restar al stock: "));
                     console.log("-----------------------------");
                 }
                 dato.productos[i].stock -= resta;
             }
         }
-    }
+    }           
         console.clear();
         console.log("¡Producto editado con exito!");
         console.log("-----------------------------");
@@ -96,7 +96,14 @@ export function eliminarProducto(dato) {
 }
 
 export function mostrarEstadistica(dato) {
-    
+    let totalAlmacen = 0;
+
+    for (let i = 0; i < dato.productos.length; i++){
+        let valorTotalProducto = dato.productos[i].precio * dato.productos[i].stock;
+        totalAlmacen += valorTotalProducto;
+    }
+    console.log("El valor monetario total del inventario es de:",totalAlmacen);
+    console.log("-----------------------------");
 }
 
 export function leerInventario() {
