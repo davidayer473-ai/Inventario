@@ -47,6 +47,7 @@ do {
             break;
         default:
             console.log("Opción no válida. Intenta de nuevo.");
+            console.log("-----------------------------");
             break;
     }
 } while (opcion !== "6");
