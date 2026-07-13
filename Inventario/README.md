@@ -22,6 +22,7 @@ Al ejecutar el programa aparecerá un menú con las siguientes opciones:
 4. Eliminar Producto
 5. Mostrar Estadísticas
 6. Salir
+   
 -Escriba el número de la opción deseada y presione **Enter**.
 
 # 🟢 Opción 1 - Agregar Producto
