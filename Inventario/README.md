@@ -1,11 +1,13 @@
-# Sistema de inventarios.
+# 📦 Sistema de Inventario
+
+Programa de consola con un menú **CRUD** completo, desarrollado para simular la administración de un inventario de productos utilizando un archivo **JSON** como almacenamiento permanente de los productos que seran registrados por el usuario.
 
 # 👥 Integrantes
 
-- David Castellanos C.I. 32.724.748
-- Moisés Rivas C.I. 32.730.809
-- Carlos Abreu C.I. 33.598.193
-- Sebastián Olmos C.I. 33.639.742
+- David Castellanos | **C.I.** 32.724.748
+- Moisés Rivas | **C.I.** 32.730.809
+- Carlos Abreu | **C.I.** 33.598.193
+- Sebastián Olmos | **C.I.** 33.639.742
 
 # ▶️ Cómo ejecutar el programa
 
