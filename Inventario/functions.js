@@ -192,7 +192,7 @@ export function leerInventario() {
         return estructuraInicial;
     }
     try {
-        const contenido = fs.readFileSync(RUTA_ARCHIVO, 'utf-8');
+        const contenido = fs.readFileSync("inventario.json", 'utf-8');
         return JSON.parse(contenido);
     } catch (error) {
         console.log("Error al leer el archivo, se usará un inventario vacío.");
